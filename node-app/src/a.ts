@@ -3,7 +3,7 @@ function greet(firstName: string) {
   console.log("Hello " + firstName);
 }
 
-greet("Kashifa");
+greet("Kashifa");   
 
 // sum function
 function sum(a: number, b: number): number {
