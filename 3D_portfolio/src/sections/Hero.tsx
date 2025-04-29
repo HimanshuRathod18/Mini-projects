@@ -1,13 +1,27 @@
-import Button from "../components/Button/Button";
+import { Button } from "../components/Button";
+import { DifferentButton } from "../components/Button/DifferentButton";
+import HeroExperience from "../components/HeroModels/HeroExperience";
 import { words } from "../constants/index";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import AnimatedCounter from "../components/AnimatedCounter";
 
 const Hero = () => {
+  // using GSAP here
+  useGSAP(() => {
+    gsap.fromTo(
+      ".hero-text h1",
+      { y: 50, opacity: 0 },
+      { y: 0, opacity: 1, stagger: 0.2, duration: 1, ease: "power2.inOut" }
+    );
+  });
   return (
     <section id="hero" className="relative overflow-hidden">
       <div className="absolute top-0 left-0 z-10">
         <img src="/images/bg.png" alt="background" />
       </div>
       <div className="hero-layout">
+        {/*Left Hero model */}
         <header className="flex flex-col justify-center md:w-full w-screen md:px-20 px-5">
           <div className="flex flex-col gap-7">
             <div className="hero-text">
@@ -33,19 +47,26 @@ const Hero = () => {
               </h1>
               <h1>into Real projects</h1>
               <h1>that Deliver Results</h1>
-              <p className="text-white-50 md:text-xl relative z-10 pointer-events-none">
+              <p className="text-white-50 md:text-xl relative z-10 pointer-events-none pb-4">
                 Hi I am Himanshu, a developer on a learning path, sharing my
                 projects through the journey
               </p>
               <Button
                 className="md:w-80 md:h-16 w-60 h-12"
-                id="button"
+                id="counter"
                 text="See my Work"
               />
             </div>
           </div>
         </header>
+        {/* Right side*/}
+        <figure>
+          <div className="hero-3d-layout">
+            <HeroExperience />
+          </div>
+        </figure>
       </div>
+      <AnimatedCounter />
     </section>
   );
 };
