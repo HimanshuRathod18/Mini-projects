@@ -47,16 +47,16 @@ const Hero = () => {
               </h1>
               <h1>into Real projects</h1>
               <h1>that Deliver Results</h1>
-              <p className="text-white-50 md:text-xl relative z-10 pointer-events-none pb-4">
-                Hi I am Himanshu, a developer on a learning path, sharing my
-                projects through the journey
-              </p>
-              <Button
-                className="md:w-80 md:h-16 w-60 h-12"
-                id="counter"
-                text="See my Work"
-              />
             </div>
+            <p className="text-white-50 md:text-xl relative z-10 pointer-events-none pb-4">
+              Hi I am Himanshu, a developer on a learning path, sharing my
+              projects through the journey
+            </p>
+            <Button
+              className="md:w-80 md:h-16 w-60 h-12"
+              id="counter"
+              text="See my Work"
+            />
           </div>
         </header>
         {/* Right side*/}
