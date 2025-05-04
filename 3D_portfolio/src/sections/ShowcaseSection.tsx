@@ -11,18 +11,20 @@ const ShowcaseSection = () => {
   const projectRef2 = useRef(null);
   const projectRef3 = useRef(null);
 
-  const projects = [
-    projectRef1.current,
-    projectRef2.current,
-    projectRef3.current,
-  ];
-
+  // GSAP hook for using the library, I pass the ref of the div on which i want to make the animation
   useGSAP(() => {
+    // fromTo gets the current ref as first argument, the next parameter is the initial state of it,
+    // and the last parameter is the state it needs to be with all the animation props
     gsap.fromTo(
       sectionRef.current,
       { opacity: 0 },
       { opacity: 1, duration: 1.5 }
     );
+    const projects = [
+      projectRef1.current,
+      projectRef2.current,
+      projectRef3.current,
+    ];
     projects.forEach((card, index) => {
       gsap.fromTo(
         card,
@@ -32,18 +34,18 @@ const ShowcaseSection = () => {
           opacity: 1,
           duration: 1,
           delay: 0.3 * (index + 1),
-          scrollTrigger: { trigger: card, start: "top bottom-=10" },
+          scrollTrigger: { trigger: card, start: "top bottom-=100" },
         }
       );
     });
   }, []);
 
   return (
-    <section id="work" ref={sectionRef} className="app-showcase">
+    <div id="work" ref={sectionRef} className="app-showcase">
       <div className="w-full">
         <div className="showcaselayout">
           {/* Left side*/}
-          <div className="first-project-wrapper" ref={projectRef1}>
+          <div ref={projectRef1} className="first-project-wrapper">
             <div className="image-wrapper">
               <img src="/images/project1.png" alt="Ryde" />
             </div>
@@ -70,7 +72,7 @@ const ShowcaseSection = () => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
