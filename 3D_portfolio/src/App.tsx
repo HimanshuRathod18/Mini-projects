@@ -4,6 +4,9 @@ import FeatureCards from "./sections/FeatureCards";
 import Navbar from "./components/Navbar/Navbar";
 import LogoSection from "./components/LogoSection/LogoSection";
 import ExperienceSection from "./sections/ExperienceSection";
+import Techstack from "./sections/Techstack";
+import Contact from "./sections/Contact";
+import Footer from "./sections/Footer";
 
 const App = () => {
   return (
@@ -14,6 +17,9 @@ const App = () => {
       {/* <LogoSection /> */}
       <FeatureCards />
       <ExperienceSection />
+      <Techstack />
+      <Contact />
+      <Footer />
     </>
   );
 };
